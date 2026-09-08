@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designated Donuts</title>
+    <link rel="stylesheet" href="/static/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="top-navigation-container-bar">
+    
+        <div class="left-side-container-box-for-logo">
+            <img src="/static/images/Donut_Icon_Logo.png"
+                 alt="Donut Destination Icon"
+                 height="400px"
+                 width="400px">
+    
+            <span class="logo-title-text">Donut Destination</span>
+        </div>
+    
+    
+        <!-- Hamburger button -->
+        <button class="toggle-menu" onclick="toggleMenu()">
+            <i class="ri-menu-line"></i>
+        </button>
+    
+    
+        <div class="right-side-nav-options" id="nav-menu">
+    
+            {% if "user_id" in session %}
+                <!-- User is logged in -->
+                <a class="login-page-action-btn" href="{{ url_for('logout') }}">
+                    <i class="ri-user-line"></i>
+                    <span class="btn-content-text">Logout</span>
+                </a>
+            {% else %}
+                <!-- User is not logged in -->
+                <a class="login-page-action-btn" href="{{ url_for('login_page') }}">
+                    <i class="ri-user-line"></i>
+                    <span class="btn-content-text">Login</span>
+                </a>
+            {% endif %}
+    
+    
+            <div>
+                <a class="home-page-action-btn" href="{{ url_for('home_page') }}">
+                    <i class="ri-home-3-line"></i>
+                    <span class="btn-content-text">Home</span>
+                </a>
+            </div>
+    
+    
+            <div>
+                <a class="about-page-action-btn" href="{{ url_for('about_page') }}">
+                    <i class="ri-info-i"></i>
+                    <span class="btn-content-text">About</span>
+                </a>
+            </div>
+    
+    
+            <div>
+                <a class="orders-page-action-btn" href="{{ url_for('order_page') }}">
+                    <i class="ri-inbox-archive-line"></i>
+                    <span class="btn-content-text">Orders</span>
+                </a>
+            </div>
+    
+    
+            <div>
+                <a class="reviews-page-action-btn" href="{{ url_for('review_page') }}">
+                    <i class="ri-question-answer-line"></i>
+                    <span class="btn-content-text">Reviews</span>
+                </a>
+            </div>
+    
+    
+            <div>
+                <a class="cart-page-action-btn" href="{{ url_for('cart_page') }}">
+                    <i class="ri-shopping-cart-line"></i>
+                </a>
+            </div>
+    
+        </div>
+    </div>    
+    
+    <script src="{{ url_for('static', filename='toggle.js') }}"></script>
+
+
+        <section>
+            <p class="aboutwriting">
+                Welcome to Designated Donuts – where every bite is a little moment of happiness! <br>
+                Our story began in 1980, with a small kitchen, a big dream, and a passion for donuts that could make anyone <br>
+                smile. What started as a humble venture quickly captured the hearts of our community. People loved our <br>
+                fresh, creative flavors, and soon word spread—Designated Donuts became a go-to spot for anyone looking <br>
+                for a sweet treat and a friendly atmosphere. <br>
+                <br>
+                From classic glazed and chocolate donuts to unique creations like maple bacon, matcha, and seasonal specials, <br>
+                our menu is designed to delight every taste. We pride ourselves on using only the finest ingredients and crafting <br>
+                each donut with care. Every bite tells our story: one of creativity, dedication, and a genuine love for what we <br>
+                do. Thanks to the incredible support of our customers, Designated Donuts has grown beyond our wildest expectations.<br>
+                We’ve served thousands of happy customers, participated in local events, and even catered parties and celebrations <br>
+                across the region. Each milestone reminds us of why we started—to bring joy, connection, and sweetness to everyone<br>
+                who walks through our doors. <br>
+                <br>
+                At Designated Donuts, it’s not just about donuts; it’s about creating experiences, building community, and making <br>
+                everyday moments a little brighter. Whether you’re stopping by for a quick snack, celebrating a special occasion,<br>
+                or just in need of a pick-me-up, we can’t wait to share our passion with you.<br>
+                <br>
+                Join us, taste the difference, and become a part of the Designated Donuts family!
+            </p>
+        </section>
+
+</body>
+</html>

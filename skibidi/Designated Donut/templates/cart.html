@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designated Donuts</title>
+    <link rel="stylesheet" href="/static/cart.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+<body>
+    <div class="top-navigation-container-bar">
+    
+        <div class="left-side-container-box-for-logo">
+            <img src="/static/images/Donut_Icon_Logo.png"
+                 alt="Donut Destination Icon"
+                 height="400px"
+                 width="400px">
+    
+            <span class="logo-title-text">Donut Destination</span>
+        </div>
+    
+    
+        <!-- Hamburger button -->
+        <button class="toggle-menu" onclick="toggleMenu()">
+            <i class="ri-menu-line"></i>
+        </button>
+    
+    
+        <div class="right-side-nav-options" id="nav-menu">
+    
+            {% if "user_id" in session %}
+                <!-- User is logged in -->
+                <a class="login-page-action-btn" href="{{ url_for('logout') }}">
+                    <i class="ri-user-line"></i>
+                    <span class="btn-content-text">Logout</span>
+                </a>
+            {% else %}
+                <!-- User is not logged in -->
+                <a class="login-page-action-btn" href="{{ url_for('login_page') }}">
+                    <i class="ri-user-line"></i>
+                    <span class="btn-content-text">Login</span>
+                </a>
+            {% endif %}
+    
+    
+            <div>
+                <a class="home-page-action-btn" href="{{ url_for('home_page') }}">
+                    <i class="ri-home-3-line"></i>
+                    <span class="btn-content-text">Home</span>
+                </a>
+            </div>
+    
+    
+            <div>
+                <a class="about-page-action-btn" href="{{ url_for('about_page') }}">
+                    <i class="ri-info-i"></i>
+                    <span class="btn-content-text">About</span>
+                </a>
+            </div>
+    
+    
+            <div>
+                <a class="orders-page-action-btn" href="{{ url_for('order_page') }}">
+                    <i class="ri-inbox-archive-line"></i>
+                    <span class="btn-content-text">Orders</span>
+                </a>
+            </div>
+    
+    
+            <div>
+                <a class="reviews-page-action-btn" href="{{ url_for('review_page') }}">
+                    <i class="ri-question-answer-line"></i>
+                    <span class="btn-content-text">Reviews</span>
+                </a>
+            </div>
+    
+    
+            <div>
+                <a class="cart-page-action-btn" href="{{ url_for('cart_page') }}">
+                    <i class="ri-shopping-cart-line"></i>
+                </a>
+            </div>
+    
+        </div>
+    </div> 
+    
+    <script src="{{ url_for('static', filename='javascript/toggle.js') }}"></script>
+
+    <div class="cart-layout">
+
+        <!-- Cart table -->
+<!-- Cart table -->
+    <div class="cart-table-container">
+
+        {% if cart_items %}
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for item in cart_items %}
+                <tr>
+
+                    <td style="text-align: center;">
+                        <img src="/static/images/{{ item[0] }}.jpg" width="150">
+                    </td>
+
+                    <td>
+                        {{ item[1] }}
+                    </td>
+
+                    <td>
+                        ${{ item[2] }}
+                    </td>
+
+                    <td style="text-align: center;">
+
+                        <!-- Decrease -->
+                        <form action="{{ url_for('decrease_cart') }}"
+                            method="POST"
+                            style="display:inline;">
+                        
+                            <input type="hidden" name="product_id" value="{{ item[0] }}">
+                        
+                            <button type="submit" class="decreasebutton">−</button>
+                        </form>
+                        
+                        {{ item[3] }}
+                        
+                        <!-- Increase -->
+                        <form action="{{ url_for('increase_cart') }}"
+                            method="POST"
+                            style="display:inline;">
+                        
+                            <input type="hidden" name="product_id" value="{{ item[0] }}">
+                        
+                            <button type="submit" class="increasebutton">+</button>
+                        </form>
+                        
+                        <!-- Remove -->
+                        <form action="{{ url_for('remove_from_cart') }}"
+                            method="POST"
+                            style="display:inline;">
+                        
+                            <input type="hidden" name="product_id" value="{{ item[0] }}">
+                        
+                            <button type="submit" class="removebutton">Remove</button>
+                        </form>
+
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+
+        <div class="empty-cart-message">
+            <h2>Oops, nothing here!</h2>
+            <p>Added donuts from the order page will appear here.</p>
+        </div>
+
+        {% endif %}
+
+    </div>
+    
+    
+        <!-- Checkout -->
+        {% if cart_items %}
+    
+        <div class="checkout-box">
+    
+            <h2>Cart Total</h2>
+    
+            <p>Total: ${{ total_cost }}</p>
+    
+            <form action="{{ url_for('checkout') }}" method="POST">
+                <button type="submit">Checkout</button>
+            </form>
+    
+        </div>
+    
+        {% endif %}
+    
+    </div>
+</body>
+</html> 

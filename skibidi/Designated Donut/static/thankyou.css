@@ -1,0 +1,434 @@
+/* Import the Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Prevent vertical overscrolling */
+html {
+    overscroll-behavior-y: none;
+}
+
+/* Reset default spacing and use border-box sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Style the page background and layout */
+body {
+    background-color: #f4f5f6;
+    min-height: 100vh;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style the navigation bar */
+.top-navigation-container-bar {
+    background-color: #1daee7;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Arrange the logo and website name */
+.left-side-container-box-for-logo {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+/* Set the logo size and prevent dragging */
+.left-side-container-box-for-logo img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -moz-window-dragging: none;
+}
+
+/* Style the website name */
+.logo-title-text {
+    font-size: 1.45rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Arrange the navigation options */
+.right-side-nav-options {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 8px;
+}
+
+/* Style the home button */
+.home-page-action-btn {
+    width: fit-content;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 10px 16px;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition:
+        background-color 0.25s ease,
+        border 0.25s ease,
+        transform 0.2s ease;
+    text-decoration: none;
+    color: white;
+}
+
+/* Change the home button when hovered */
+.home-page-action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    transform: translateY(-1px);
+}
+
+/* Style the home icon */
+.ri-home-3-line {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* Style the button text */
+.btn-content-text {
+    font-size: 1.05rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+}
+
+/* Style the thank-you page */
+.thank-you-page {
+    width: 90%;
+    max-width: 950px;
+    margin: 45px auto 55px;
+    flex: 1;
+}
+
+/* Style the main thank-you box */
+.thank-you-box {
+    background-color: white;
+    text-align: center;
+    padding: 50px 30px;
+    border-radius: 12px;
+    border: 1px solid #e4e4e4;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    margin-bottom: 35px;
+}
+
+/* Style the success icon */
+.success-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    background-color: #1daee7;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 12px rgba(29, 174, 231, 0.25);
+}
+
+/* Set the success icon size */
+.success-icon i {
+    font-size: 36px;
+}
+
+/* Style the thank-you heading */
+.thank-you-box h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Style the thank-you message */
+.thank-you-box p {
+    font-size: 16px;
+    color: #707070;
+    line-height: 1.5;
+}
+
+/* Style the orders section */
+.orders-section {
+    width: 100%;
+}
+
+/* Style the orders heading */
+.orders-section > h2 {
+    font-family: Montserrat, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* Arrange the order boxes vertically */
+.orders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Style each order box */
+.order-box {
+    background-color: white;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    padding: 24px 27px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+/* Add an effect when an order box is hovered */
+.order-box:hover {
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.09);
+    transform: translateY(-2px);
+}
+
+/* Style the order heading */
+.order-box h2 {
+    font-family: Montserrat, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+/* Style the order date */
+.order-box > p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 17px;
+}
+
+/* Style the product heading */
+.order-box h3 {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* Style the product details */
+.order-box h3 + p,
+.order-box h3 ~ p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.7;
+    padding: 3px 0;
+}
+
+/* Style the first letter of product details */
+.order-box h3 ~ p::first-letter {
+    color: #111;
+}
+
+/* Style the message shown when there are no orders */
+.no-orders {
+    background-color: white;
+    text-align: center;
+    padding: 50px 25px;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* Style the no-orders icon */
+.no-orders i {
+    display: block;
+    color: #1daee7;
+    font-size: 46px;
+    margin-bottom: 14px;
+}
+
+/* Style the no-orders heading */
+.no-orders h3 {
+    margin-bottom: 8px;
+    font-family: Montserrat, sans-serif;
+    font-size: 21px;
+}
+
+/* Style the no-orders message */
+.no-orders p {
+    color: #777;
+    font-size: 15px;
+}
+
+/* Style the back-to-home button */
+.back-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 25px;
+    background-color: #1daee7;
+    color: white;
+    text-decoration: none;
+    padding: 13px 21px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 9px rgba(29, 174, 231, 0.20);
+    transition:
+        background-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Change the back-to-home button when hovered */
+.back-home:hover {
+    background-color: #168fc1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 13px rgba(29, 174, 231, 0.25);
+}
+
+/* Style the footer */
+footer {
+    background-color: #1daee7;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    margin-top: auto;
+}
+
+/* Reset footer paragraph spacing */
+footer p {
+    margin: 0;
+}
+
+/* Adjust the page for screens up to 700px */
+@media (max-width: 700px) {
+
+    /* Reduce navigation padding */
+    .top-navigation-container-bar {
+        padding: 10px 15px;
+    }
+
+    /* Adjust the home button */
+    .home-page-action-btn {
+        padding: 9px 12px;
+    }
+
+    /* Reduce button text size */
+    .btn-content-text {
+        font-size: 0.95rem;
+    }
+
+    /* Adjust the thank-you page width and spacing */
+    .thank-you-page {
+        width: 92%;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    /* Adjust the thank-you box */
+    .thank-you-box {
+        padding: 40px 20px;
+        margin-bottom: 30px;
+    }
+
+    /* Reduce the thank-you heading size */
+    .thank-you-box h1 {
+        font-size: 28px;
+    }
+
+    /* Reduce the success icon size */
+    .success-icon {
+        width: 65px;
+        height: 65px;
+    }
+
+    /* Adjust order box spacing */
+    .order-box {
+        padding: 21px;
+    }
+}
+
+/* Adjust the page for screens up to 500px */
+@media (max-width: 500px) {
+
+    /* Reduce the navigation bar height */
+    .top-navigation-container-bar {
+        height: 70px;
+    }
+
+    /* Hide button text on very small screens */
+    .btn-content-text {
+        display: none;
+    }
+
+    /* Adjust the home button */
+    .home-page-action-btn {
+        padding: 10px 13px;
+    }
+
+    /* Adjust the thank-you page width and spacing */
+    .thank-you-page {
+        width: 94%;
+        margin-top: 25px;
+    }
+
+    /* Reduce thank-you box padding */
+    .thank-you-box {
+        padding: 35px 18px;
+    }
+
+    /* Reduce the thank-you heading size */
+    .thank-you-box h1 {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    /* Reduce the thank-you message size */
+    .thank-you-box p {
+        font-size: 14px;
+    }
+
+    /* Reduce the orders heading size */
+    .orders-section > h2 {
+        font-size: 24px;
+    }
+
+    /* Adjust order box spacing */
+    .order-box {
+        padding: 18px;
+    }
+
+    /* Reduce the order heading size */
+    .order-box h2 {
+        font-size: 19px;
+    }
+
+    /* Make the back-to-home button full width */
+    .back-home {
+        width: 100%;
+    }
+}

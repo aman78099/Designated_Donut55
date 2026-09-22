@@ -1,0 +1,465 @@
+/* Reset default spacing and use border-box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centre the login page and set the main font and background */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    color: #1e293b;
+}
+
+/* Style the main login/signup container */
+.container {
+    display: flex;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 25x 50px -12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 90%;
+    min-height: 600px;
+    position: relative;
+}
+
+/* Style the section containing the login/signup forms */
+.form-section {
+    flex: 1;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.6s ease;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Style the coloured image and welcome section */
+.image-section {
+
+    flex: 1;
+    background: #2aaee2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    transition: all 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Position and style the content inside the image section */
+.image-content {
+    z-index: 1;
+    padding: 40px;
+    position: relative;
+}
+
+/* Style the welcome heading */
+.image-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Style the welcome description */
+.image-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    color: #cbd5e1;
+}
+
+/* Style the login/signup form title */
+.form-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #0f172a;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+/* Style the text below the form title */
+.form-subtitle {
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Add spacing around each form field */
+.form-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+/* Position and style the form icons */
+.form-group i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
+
+/* Style the form input fields */
+.form-control {
+    width: 100%;
+    padding: 16px 20px 16px 48px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fefefe;
+    outline: none;
+    font-weight: 500;
+}
+
+/* Highlight input fields when selected */
+.form-control:focus {
+    border-color: #3b82f6;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Change the input icon colour when focused */
+.form-control:focus + i {
+    color: #2aaee2;
+}
+
+/* Style the main submit button */
+.btn-primary {
+    width: 100%;
+    background: #2aaee2;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+/* Add a hover effect to the main button */
+.btn-primary:hover {
+    background: #2aaee2;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Reset the button position when clicked */
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Style the button when it is disabled */
+.btn-primary:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Add spacing above the home button */
+.home-button-container {
+    margin-top: 32px;
+}
+
+/* Style the home button */
+.home-button {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: white;
+    color: #3b82f6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Add a hover effect to the home button */
+.home-button:hover {
+    border-color: #2aaee2;
+    color: #2aaee2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Style the text used to switch between login and signup */
+.form-switch {
+    text-align: center;
+    margin-top: 32px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Style the form switch links */
+.form-switch a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Change the switch link colour when hovered */
+.form-switch a:hover {
+    color: #2563eb;
+}
+
+/* Define the animation for the form section */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Define the animation for the image section */
+@keyframes slideInRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply the left slide animation to the form */
+.form-section {
+    animation: slideInLeft 0.8s ease;
+}
+
+/* Apply the right slide animation to the image section */
+.image-section {
+    animation: slideInRight 0.8s ease;
+}
+
+/* Hide inactive login/signup forms */
+.form-container {
+    display: none;
+}
+
+/* Display and animate the active form */
+.form-container.active {
+    display: block;
+    animation: fadeIn 0.6s ease;
+}
+
+/* Define the form fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Arrange and style the terms checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Style the checkbox */
+.checkbox-group input[type="checkbox"] {
+    margin-right: 12px;
+    margin-top: 2px;
+    transform: scale(1.2);
+    accent-color: #3b82f6;
+}
+
+/* Show successful form validation */
+.form-control.success {
+    border-color: #10b981;
+    background-color: #f0fdfa;
+}
+
+/* Show unsuccessful form validation */
+.form-control.error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+/* Style validation error messages */
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* Adjust the login/signup layout for tablets and mobile */
+@media (max-width: 768px) {
+
+    /* Stack the form and image sections vertically */
+    .container {
+        flex-direction: column;
+        max-width: 400px;
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+    /* Move the image section above the form */
+    .image-section {
+        min-height: 200px;
+        order: -1;
+    }
+
+    /* Reduce form spacing on smaller screens */
+    .form-section {
+        padding: 40px 30px;
+    }
+
+    /* Reduce the form title size */
+    .form-title {
+        font-size: 2rem;
+    }
+
+    /* Reduce the image heading size */
+    .image-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Further adjust the layout for small mobile screens */
+@media (max-width: 480px) {
+
+    /* Reduce the container margins and width */
+    .container {
+        margin: 10px;
+        width: 95%;
+    }
+
+    /* Reduce form padding */
+    .form-section {
+        padding: 30px 20px;
+    }
+
+    /* Reduce the form title size */
+    .form-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Create the area for the floating background shapes */
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Create the floating circular shapes */
+.floating-shapes::before,
+.floating-shapes::after {
+
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Position and size the first floating shape */
+.floating-shapes::before {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+/* Position and size the second floating shape */
+.floating-shapes::after {
+    width: 80px;
+    height: 80px;
+    bottom: 20%;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+/* Define the floating shape animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+
+        transform: translateY(-20px);
+    }
+}
+
+/* Add a focus animation to form inputs */
+.form-control:focus {
+    animation: focusPulse 0.3s ease;
+}
+
+/* Define the input focus animation */
+@keyframes focusPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Style the sign-up link */
+.sign {
+
+    text-decoration: none;
+    color: white;
+}

@@ -1,0 +1,215 @@
+<!-- Defines the document as an HTML5 webpage -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set the character encoding and make the page responsive -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Set the webpage title -->
+    <title>Designated Donuts</title>
+
+    <!-- Import Font Awesome icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link the page to its CSS and JavaScript files -->
+    <link rel="stylesheet" href="/static/login.css">
+    <script src="/static/javascript/login.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Main container for the login and signup sections -->
+    <div class="container">
+
+        <!-- Display the login and signup forms -->
+        <div class="form-section">
+
+            <!-- Login form section -->
+            <div class="form-container active" id="loginForm">
+
+                <h1 class="form-title">Welcome Back</h1>
+
+                <p class="form-subtitle">
+                    Sign in to your account to continue your journey
+                </p>
+
+                <!-- Display an error message if one is provided -->
+                {% if error %}
+                    <p style="color: red; text-align: center;">
+                        {{ error }}
+                    </p>
+                {% endif %}
+
+                <!-- Submit the user's login details to the login route -->
+                <form id="loginFormSubmit"
+                      action="{{ url_for('login_page') }}"
+                      method="POST">
+
+                    <!-- Input for the user's email address -->
+                    <div class="form-group">
+                        <input type="email"
+                               name="email"
+                               class="form-control"
+                               placeholder="Email Address"
+                               required>
+
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <!-- Input for the user's password -->
+                    <div class="form-group">
+                        <input type="password"
+                               name="password"
+                               class="form-control"
+                               placeholder="Password"
+                               required>
+
+                        <i class="fas fa-lock"></i>
+                    </div>
+
+                    <!-- Submit the login form -->
+                    <button type="submit" class="btn-primary">
+
+                        <span class="btn-text">
+                            Sign In
+                        </span>
+                    </button>
+                </form>
+
+                <!-- Link back to the home page -->
+                <div class="home-button-container">
+                    <a href="{{ url_for('home_page') }}" class="home-button">
+                        Back to Home
+                    </a>
+                </div>
+
+                <!-- Allow the user to switch to the signup form -->
+                <div class="form-switch">
+                    Don't have an account?
+                    <a href="#" onclick="showSignup()">
+                        Create one
+                    </a>
+                </div>
+            </div>
+
+            <!-- Signup form section -->
+            <div class="form-container" id="signupForm">
+                <h1 class="form-title">
+                    Create Account
+                </h1>
+
+                <p class="form-subtitle">
+                    Join thousands of users and start your journey today
+                </p>
+
+                <!-- Display an error message if one is provided -->
+                {% if error %}
+                    <p style="color: red; text-align: center;">
+                        {{ error }}
+                    </p>
+                {% endif %}
+
+                <!-- Submit the signup details to the signup route -->
+                <form id="signupFormSubmit"
+                      action="{{ url_for('signup') }}"
+                      method="POST">
+
+                    <!-- FULL NAME -->
+
+                    <!-- Input for the user's full name -->
+                    <div class="form-group">
+                        <input type="text"
+                               name="name"
+                               class="form-control"
+                               placeholder="Full Name"
+                               required>
+
+                        <i class="fas fa-user"></i>
+                    </div>
+
+                    <!-- Input for the user's email address -->
+                    <div class="form-group">
+                        <input type="email"
+                               name="email"
+                               class="form-control"
+                               placeholder="Email Address"
+                               required>
+
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <!-- Input for the user's password -->
+                    <div class="form-group">
+                        <input type="password"
+                               name="password"
+                               class="form-control"
+                               placeholder="Password"
+                               required>
+
+                        <i class="fas fa-lock"></i>
+                    </div>
+
+                    <!-- Input for confirming the user's password -->
+                    <div class="form-group">
+                        <input type="password"
+                               name="confirm_password"
+                               class="form-control"
+                               placeholder="Confirm Password"
+                               required>
+
+                        <i class="fas fa-lock"></i>
+                    </div>
+
+                    <!-- Require the user to agree to the terms -->
+                    <div class="checkbox-group">
+
+                        <input type="checkbox"
+                               id="terms"
+                               required>
+
+                        <label for="terms">
+                            I agree to the Terms of Service and Privacy Policy
+                        </label>
+                    </div>
+
+                    <!-- Submit the signup form -->
+                    <button type="submit" class="btn-primary">
+                        <span class="btn-text">
+                            Create Account
+                        </span>
+                    </button>
+                </form>
+
+                <!-- Link back to the home page -->
+                <div class="home-button-container">
+                    <a href="{{ url_for('home_page') }}"
+                       class="home-button">
+                        Back to Home
+                    </a>
+                </div>
+
+                <!-- Allow the user to switch back to the login form -->
+                <div class="form-switch">
+                    Already have an account?
+                    <a href="#" onclick="showLogin()">
+                        Sign in
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Display the welcome message and decorative section -->
+        <div class="image-section">
+            <div class="floating-shapes"></div>
+            <div class="image-content">
+                <h2>Hello Donut Lovers!</h2>
+                <p>
+                    Enter your login details, I donut think you'll regret it!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

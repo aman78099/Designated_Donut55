@@ -1,0 +1,581 @@
+/* Import the Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Prevent vertical overscrolling */
+html {
+    overscroll-behavior-y: none;
+}
+
+/* Reset default spacing and use border-box sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Set the page background and prevent horizontal scrolling */
+body {
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Style the navigation bar and keep it at the top while scrolling */
+.top-navigation-container-bar {
+    background-color: #1daee7;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.10);
+    align-items: center;
+
+    /* Keeps navbar at the top while scrolling */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Arrange the logo and website name */
+.left-side-container-box-for-logo {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+/* Set the logo size and prevent dragging */
+.left-side-container-box-for-logo img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -moz-window-dragging: none;
+}
+
+/* Style the website name */
+.logo-title-text {
+    font-size: 1.45rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.25s ease;
+}
+
+/* Change the logo title colour when hovered */
+.logo-title-text:hover {
+    color: rgb(61, 61, 61);
+}
+
+/* Arrange the navigation options */
+.right-side-nav-options {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    gap: 10px;
+    justify-content: flex-end;
+    
+}
+
+/* Style the login button */
+.login-page-action-btn {
+    text-decoration: none;
+    padding: 15px 10px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2aaee2;
+    border-radius: 4px;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.25s ease, border 0.35s ease;
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.10);
+}
+
+/* Style the main navigation buttons */
+.home-page-action-btn,
+.about-page-action-btn,
+.orders-page-action-btn,
+.reviews-page-action-btn {
+    width: fit-content;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2aaee2;
+    border-radius: 4px;
+    padding: 10px 15px;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.25s ease, border 0.35s ease;
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.10);
+
+    /* Important for <a> */
+    text-decoration: none;
+    color: white;
+}
+
+/* Change the navigation buttons when hovered */
+.login-page-action-btn:hover,
+.home-page-action-btn:hover,
+.about-page-action-btn:hover,
+.orders-page-action-btn:hover,
+.reviews-page-action-btn:hover {
+    background-color:     rgba(238, 238, 238, 0.18);
+    border: 1px solid #ffffff;
+}
+
+/* Style the navigation icons */
+.ri-user-line,
+.ri-home-3-line,
+.ri-inbox-archive-line,
+.ri-info-i,
+.ri-question-answer-line {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* Style the text inside navigation buttons */
+.btn-content-text {
+    font-size: 1.05rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Style the shopping cart button */
+.cart-page-action-btn {
+    background-color: #f1f1f1;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(141, 141, 141, 0.15);
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.25);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.25s ease, border 0.35s ease;
+}
+
+/* Style the shopping cart icon */
+.ri-shopping-cart-line {
+    font-size: 1.15rem;
+    color: #2aaee2;
+}
+
+/* Change the cart button when hovered */
+.cart-page-action-btn:hover {
+    background-color: rgba(238, 238, 238, 0.18);
+    border: 1px solid #ffffff;
+}
+
+/* Change the cart icon colour when hovered */
+.cart-page-action-btn:hover .ri-shopping-cart-line {
+    color: #ffffff;
+}
+
+/* Style the shopping cart table */
+table {
+    border: 1.5px solid black;
+    border-collapse: collapse;
+    width: 70%;
+    margin: 4em auto;
+}
+
+/* Set the size and shape of product images */
+table img {
+    width: 150px;
+    border-radius: 10px;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* Centre the order image */
+.orderimg {
+    justify-content: center; 
+    align-items: center;
+}
+
+/* Add borders to table cells */
+td, th {
+    border: 1.5px solid #f1f1f1;
+}
+
+/* Style the table headings */
+th {
+    background-color: #3db6e5;
+    color: black;
+    font-weight: 10px;
+    font-size: 22px;
+}
+
+/* Style the table data cells */
+td {
+    color: black;
+    padding-top: none;
+}
+
+/* Style the table rows */
+tr {
+    background-color: white;
+    font-size: 18px;
+}
+
+/* Change the row colour when hovered */
+tr:hover td {
+    background-color: rgb(237, 227, 227);
+}
+
+/* Style the increase and decrease quantity buttons */
+.decreasebutton,
+.increasebutton {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/* Set the colour of the quantity buttons */
+.increasebutton,
+.decreasebutton {
+    background-color: #3db6e5;
+    color: #333;
+}
+
+/* Darken the quantity buttons when hovered */
+.increasebutton:hover,
+.decreasebutton:hover {
+    background-color: #1f92bf;
+}
+
+/* Slight press effect */
+.decreasebutton:active,
+.increasebutton:active {
+    transform: scale(0.9);
+}
+
+/* Style the remove button */
+.removebutton {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Darken the remove button when hovered */
+.removebutton:hover {
+    background-color: #e63939;
+}
+
+/* Arrange the cart and checkout sections */
+.cart-layout {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: 1px auto 0 auto;
+}
+
+/* Style the checkout summary box */
+.checkout-box {
+    width: 250px;
+    flex-shrink: 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Allow the cart table to take up the available space */
+.cart-table-container {
+    flex: 1;
+}
+
+/* Remove the default top margin from the checkout heading */
+.checkout-box h2 {
+    margin-top: 0;
+}
+
+/* Style the total price */
+.checkout-box p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Style the checkout button */
+.checkout-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Hide the hamburger menu on larger screens */
+.toggle-menu {
+    display: none;
+}
+
+/* Apply responsive navigation styles on smaller screens */
+@media screen and (max-width: 1000px) {
+
+    /* Adjust the navigation bar for smaller screens */
+    .top-navigation-container-bar {
+        height: 80px;
+        padding: 10px 20px;
+        position: relative;
+    }
+
+    /* Display and style the hamburger menu */
+    .toggle-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: #2aaee2;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    /* Style the hamburger menu icon */
+    .toggle-menu i {
+        font-size: 2rem;
+        color: white;
+    }
+
+    /* Change the hamburger button when hovered */
+    .toggle-menu:hover {
+        background-color: rgba(238, 238, 238, 0.18);
+        border: 1px solid white;
+    }
+
+    /* Hide and position the navigation menu on smaller screens */
+    .right-side-nav-options {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 220px;
+        height: 390px;
+        max-height: calc(100vh - 100px);
+        background-color: #1daee7;
+        padding: 15px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 2001;
+        overflow-y: auto;
+        overflow-x: hidden;
+        justify-content: flex-start;
+    }
+
+    /* Show the navigation menu when the show class is added */
+    .right-side-nav-options.show {
+        display: flex;
+    }
+
+    /* Make navigation options fill the menu width */
+    .right-side-nav-options > div,
+    .right-side-nav-options > a {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    /* Adjust navigation buttons for smaller screens */
+    .login-page-action-btn,
+    .home-page-action-btn,
+    .about-page-action-btn,
+    .orders-page-action-btn,
+    .reviews-page-action-btn {
+        width: 100%;
+        min-height: 50px;
+        height: 50px;
+        justify-content: flex-start;
+        padding: 10px 15px;
+        flex: 0 0 auto;
+    }
+
+    /* Position the final navigation option */
+    .right-side-nav-options > div:last-child {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    /* Adjust the cart button size on smaller screens */
+    .cart-page-action-btn {
+        width: 50px;
+        height: 50px;
+
+        flex: 0 0 auto;
+    }
+
+    /* Style the navigation scrollbar */
+    .right-side-nav-options::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Style the navigation scrollbar handle */
+    .right-side-nav-options::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+    }
+
+    /* Style the navigation scrollbar track */
+    .right-side-nav-options::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+}
+
+/* Adjust the cart layout for smaller screens */
+@media screen and (max-width: 1000px) {
+
+    /* Stack the cart table and checkout box vertically */
+    .cart-layout {
+        width: 95%;
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    /* Allow the cart table to scroll horizontally */
+    .cart-table-container {
+        width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+    }
+
+    /* Make the table fit the screen */
+    table {
+        width: 100%;
+        margin: 0;
+        table-layout: fixed;
+    }
+
+    /* Set the width of each table column */
+    th:nth-child(1) {
+        width: 28%;
+    }
+
+    th:nth-child(2) {
+        width: 27%;
+    }
+
+    th:nth-child(3) {
+        width: 15%;
+    }
+
+    th:nth-child(4) {
+        width: 30%;
+    }
+
+    /* Reduce table heading size on smaller screens */
+    th {
+        font-size: 18px;
+        padding: 8px 5px;
+    }
+
+    /* Adjust table cell text and wrapping */
+    td {
+        font-size: 16px;
+        padding: 8px 5px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Resize product images on smaller screens */
+    table img {
+        width: 90px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Centre the final table column */
+    td:last-child {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    /* Adjust quantity buttons for smaller screens */
+    .decreasebutton,
+    .increasebutton {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    /* Adjust the remove button for smaller screens */
+    .removebutton {
+        display: block;
+        margin: 8px auto 0 auto;
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+
+    /* Adjust the checkout box for smaller screens */
+    .checkout-box {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Make the checkout button fill the box */
+    .checkout-box button {
+        width: 100%;
+    }
+}
+
+/* Style the message shown when the cart is empty */
+.empty-cart-message {
+    width: 70%;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Style the empty cart heading */
+.empty-cart-message h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+/* Style the empty cart message text */
+.empty-cart-message p {
+    font-size: 18px;
+}

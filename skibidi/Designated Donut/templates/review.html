@@ -1,0 +1,171 @@
+<!-- Define the document as an HTML5 webpage -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Set the character encoding and make the page responsive -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Set browser compatibility and webpage title -->
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Designated Donuts</title>
+
+  <!-- Link the page to its CSS stylesheet -->
+  <link rel='stylesheet' type='text/css' media='screen' href='/static/review.css'>
+
+  <!-- Import Font Awesome icons -->
+  <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
+
+  <!-- Import Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="top-navigation-container-bar">
+    
+        <!-- Display the website logo and name -->
+        <div class="left-side-container-box-for-logo">
+            <img src="/static/images/Donut_Icon_Logo.png"
+                 alt="Donut Destination Icon"
+                 height="400px"
+                 width="400px">
+    
+            <span class="logo-title-text">Donut Destination</span>
+        </div>
+    
+    
+        <!-- Hamburger button -->
+        <button class="toggle-menu" onclick="toggleMenu()">
+            <i class="ri-menu-line"></i>
+        </button>
+    
+    
+        <!-- Display the navigation options -->
+        <div class="right-side-nav-options" id="nav-menu">
+    
+            <!-- Show Logout if the user is logged in, otherwise show Login -->
+            {% if "user_id" in session %}
+                <!-- User is logged in -->
+                <a class="login-page-action-btn" href="{{ url_for('logout') }}">
+                    <i class="ri-user-line"></i>
+                    <span class="btn-content-text">Logout</span>
+                </a>
+            {% else %}
+                <!-- User is not logged in -->
+                <a class="login-page-action-btn" href="{{ url_for('login_page') }}">
+                    <i class="ri-user-line"></i>
+                    <span class="btn-content-text">Login</span>
+                </a>
+            {% endif %}
+    
+    
+            <!-- Link to the home page -->
+            <div>
+                <a class="home-page-action-btn" href="{{ url_for('home_page') }}">
+                    <i class="ri-home-3-line"></i>
+                    <span class="btn-content-text">Home</span>
+                </a>
+            </div>
+    
+    
+            <!-- Link to the About page -->
+            <div>
+                <a class="about-page-action-btn" href="{{ url_for('about_page') }}">
+                    <i class="ri-info-i"></i>
+                    <span class="btn-content-text">About</span>
+                </a>
+            </div>
+    
+    
+            <!-- Link to the Orders page -->
+            <div>
+                <a class="orders-page-action-btn" href="{{ url_for('order_page') }}">
+                    <i class="ri-inbox-archive-line"></i>
+                    <span class="btn-content-text">Orders</span>
+                </a>
+            </div>
+    
+    
+            <!-- Link to the Reviews page -->
+            <div>
+                <a class="reviews-page-action-btn" href="{{ url_for('review_page') }}">
+                    <i class="ri-question-answer-line"></i>
+                    <span class="btn-content-text">Reviews</span>
+                </a>
+            </div>
+    
+    
+            <!-- Link to the shopping cart -->
+            <div>
+                <a class="cart-page-action-btn" href="{{ url_for('cart_page') }}">
+                    <i class="ri-shopping-cart-line"></i>
+                </a>
+            </div>
+    
+        </div>
+    </div>    
+    
+    <!-- Load the JavaScript file for the navigation menu -->
+    <script src="{{ url_for('static', filename='javascript/toggle.js') }}"></script>
+
+    <!-- Main reviews section -->
+    <div class="total">
+        <div class="rev-section">
+
+            <!-- Display the reviews heading and guidelines -->
+            <h2 class="title">Our Guests Love Us</h2>
+            <p class="note">Be honest and respectful. Do not include offensive, abusive, or threatening language.</p>
+
+                <!-- Display all customer reviews -->
+                <div class="reviews">
+
+                    <!-- Loop through each review from the database -->
+                    {% for review in reviews %}
+                    <div class="review">
+
+                        <!-- Display the reviewer's image -->
+                        <div class="head-review">
+                            <img src="https://cdn.phototourl.com/free/2026-08-06-c388535c-cd30-4345-9b4a-fafa1028110c.png" width="250px">
+                        </div>
+
+                        <div class="body-review">
+
+                            <!-- Display the reviewer's name -->
+                            <div class="name-review">
+                                {{ review[0] }}
+                            </div>
+
+                            <!-- Display the reviewer's location -->
+                            <div class="place-review">
+                                New Zealand
+                            </div>
+
+                            <!-- Display the review rating -->
+                            <div class="rating">
+                                {{ review[2] }}/5
+                            </div>
+
+                            <!-- Display the review text -->
+                            <div class="desc-review">
+                                {{ review[1] }}
+                            </div>
+                        </div>
+                </div>
+
+                <!-- End the review loop -->
+                {% endfor %}
+                    
+            </div>
+
+        </div>
+
+        <!-- Button that takes the user to the feedback page to add a review -->
+        <button class="review-button"onclick="window.location.href='{{ url_for('feedback_page') }}'">
+        Add a Review
+        </button>
+    </div>
+
+</body>
+</html>

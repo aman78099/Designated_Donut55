@@ -1,0 +1,48 @@
+<!-- Defines the document as an HTML5 webpage -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Set the character encoding and make the page responsive -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Display the error code and title in the browser tab -->
+    <title>{{ error_code }} - {{ error_title }}</title>
+
+    <!-- Link the page to its CSS stylesheet -->
+    <link rel="stylesheet" href="/static/error.css">
+</head>
+
+<body>
+    
+    <!-- Display the error information -->
+    <div class="error-container">
+
+        <!-- Display the error code -->
+        <div class="error-code">
+            {{ error_code }}
+        </div>
+
+        <!-- Display the error title -->
+        <h1>{{ error_title }}</h1>
+
+        <!-- Display the main error message -->
+        <p class="error-message">
+            {{ error_message }}
+        </p>
+
+        <!-- Display additional information about the error -->
+        <p class="error-details">
+            {{ error_details }}
+        </p>
+
+        <!-- Provide a link back to the home page -->
+        <a href="{{ url_for('home_page') }}" class="home-button">
+            Return to Home
+        </a>
+    </div>
+
+</body>
+
+</html>

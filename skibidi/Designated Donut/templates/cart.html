@@ -1,0 +1,221 @@
+<!-- Defines the document as an HTML5 webpage -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set the character encoding and make the page responsive -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Set the webpage title and link the cart stylesheet -->
+    <title>Designated Donuts</title>
+    <link rel="stylesheet" href="/static/cart.css">
+
+    <!-- Import Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+<body>
+
+    <!-- Navigation bar -->
+    <div class="top-navigation-container-bar">
+    
+        <!-- Display the website logo and name -->
+        <div class="left-side-container-box-for-logo">
+            <img src="/static/images/Donut_Icon_Logo.png"
+                 alt="Donut Destination Icon"
+                 height="400px"
+                 width="400px">
+    
+            <span class="logo-title-text">Donut Destination</span>
+        </div>
+    
+    
+        <!-- Hamburger button -->
+        <button class="toggle-menu" onclick="toggleMenu()">
+            <i class="ri-menu-line"></i>
+        </button>
+    
+    
+        <!-- Display the navigation options -->
+        <div class="right-side-nav-options" id="nav-menu">
+    
+            <!-- Show Logout if the user is logged in, otherwise show Login -->
+            {% if "user_id" in session %}
+                <!-- User is logged in -->
+                <a class="login-page-action-btn" href="{{ url_for('logout') }}">
+                    <i class="ri-user-line"></i>
+                    <span class="btn-content-text">Logout</span>
+                </a>
+            {% else %}
+                <!-- User is not logged in -->
+                <a class="login-page-action-btn" href="{{ url_for('login_page') }}">
+                    <i class="ri-user-line"></i>
+                    <span class="btn-content-text">Login</span>
+                </a>
+            {% endif %}
+    
+    
+            <!-- Link to the home page -->
+            <div>
+                <a class="home-page-action-btn" href="{{ url_for('home_page') }}">
+                    <i class="ri-home-3-line"></i>
+                    <span class="btn-content-text">Home</span>
+                </a>
+            </div>
+    
+    
+            <!-- Link to the About page -->
+            <div>
+                <a class="about-page-action-btn" href="{{ url_for('about_page') }}">
+                    <i class="ri-info-i"></i>
+                    <span class="btn-content-text">About</span>
+                </a>
+            </div>
+    
+    
+            <!-- Link to the Orders page -->
+            <div>
+                <a class="orders-page-action-btn" href="{{ url_for('order_page') }}">
+                    <i class="ri-inbox-archive-line"></i>
+                    <span class="btn-content-text">Orders</span>
+                </a>
+            </div>
+    
+    
+            <!-- Link to the Reviews page -->
+            <div>
+                <a class="reviews-page-action-btn" href="{{ url_for('review_page') }}">
+                    <i class="ri-question-answer-line"></i>
+                    <span class="btn-content-text">Reviews</span>
+                </a>
+            </div>
+    
+    
+            <!-- Link to the shopping cart -->
+            <div>
+                <a class="cart-page-action-btn" href="{{ url_for('cart_page') }}">
+                    <i class="ri-shopping-cart-line"></i>
+                </a>
+            </div>
+    
+        </div>
+    </div> 
+    
+    <!-- Load the JavaScript file for the navigation menu -->
+    <script src="{{ url_for('static', filename='javascript/toggle.js') }}"></script>
+
+    <!-- Main cart layout -->
+    <div class="cart-layout">
+
+        <!-- Display the cart items in a table -->
+        <!-- Cart table -->
+    <div class="cart-table-container">
+
+        <!-- Check whether the cart contains any items -->
+        {% if cart_items %}
+
+        <!-- Display the products currently in the cart -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- Loop through each item in the cart -->
+                {% for item in cart_items %}
+                <tr>
+                    <!-- Display the product image -->
+                    <td style="text-align: center;">
+                        <img src="/static/images/{{ item[0] }}.jpg" width="150">
+                    </td>
+
+                    <!-- Display the product name -->
+                    <td>
+                        {{ item[1] }}
+                    </td>
+
+                    <!-- Display the total price for the product quantity -->
+                    <td>
+                        ${{ item[2] }}
+                    </td>
+
+                    <!-- Display quantity controls -->
+                    <td style="text-align: center;">
+
+                        <!-- Decrease -->
+                        <form action="{{ url_for('decrease_cart') }}"
+                            method="POST"
+                            style="display:inline;">
+                        
+                            <input type="hidden" name="product_id" value="{{ item[0] }}">
+                        
+                            <button type="submit" class="decreasebutton">−</button>
+                        </form>
+                        
+                        {{ item[3] }}
+                        
+                        <!-- Increase -->
+                        <form action="{{ url_for('increase_cart') }}"
+                            method="POST"
+                            style="display:inline;">
+                        
+                            <input type="hidden" name="product_id" value="{{ item[0] }}">
+                        
+                            <button type="submit" class="increasebutton">+</button>
+                        </form>
+                        
+                        <!-- Remove -->
+                        <form action="{{ url_for('remove_from_cart') }}"
+                            method="POST"
+                            style="display:inline;">
+                        
+                            <input type="hidden" name="product_id" value="{{ item[0] }}">
+                        
+                            <button type="submit" class="removebutton">Remove</button>
+                        </form>
+
+                    </td>
+
+                </tr>
+                <!-- End the cart item loop -->
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Display a message if the cart is empty -->
+        {% else %}
+
+        <div class="empty-cart-message">
+            <h2>Oops, nothing here!</h2>
+            <p>Added donuts from the order page will appear here.</p>
+        </div>
+
+        {% endif %}
+
+    </div>
+    
+        <!-- Display the checkout section when the cart contains items -->
+        {% if cart_items %}
+    
+        <div class="checkout-box">
+    
+            <h2>Cart Total</h2>
+    
+            <!-- Display the total cost of all cart items -->
+            <p>Total: ${{ total_cost }}</p>
+    
+            <!-- Submit the cart for checkout -->
+            <form action="{{ url_for('checkout') }}" method="POST">
+                <button type="submit">Checkout</button>
+            </form>
+    
+        </div>
+    
+        {% endif %}
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,331 @@
+/* Import the Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Prevent vertical overscrolling */
+html {
+    overscroll-behavior-y: none;
+}
+
+/* Reset default spacing and use border-box sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Set the page background and size */
+body {
+    background-color: #f1f1f1;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Style and position the fixed navigation bar */
+.top-navigation-container-bar {
+    background-color: #1daee7;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.10);
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+}
+
+/* Arrange the logo and website name */
+.left-side-container-box-for-logo {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+/* Set the logo size and prevent dragging */
+.left-side-container-box-for-logo img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -moz-window-dragging: none;
+}
+
+/* Style the website logo title */
+.logo-title-text {
+    font-size: 1.45rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.25s ease;
+}
+
+/* Change the logo title colour when hovered */
+.logo-title-text:hover {
+    color: rgb(61, 61, 61);
+}
+
+/* Arrange the navigation options */
+.right-side-nav-options {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* Style the login/logout button */
+.login-page-action-btn {
+    text-decoration: none;
+    padding: 15px 10px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2aaee2;
+    border-radius: 4px;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.25s ease, border 0.35s ease;
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.10);
+}
+
+/* Style the main navigation buttons */
+.home-page-action-btn,
+.about-page-action-btn,
+.orders-page-action-btn,
+.reviews-page-action-btn {
+    width: fit-content;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2aaee2;
+    border-radius: 4px;
+    padding: 10px 15px;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.25s ease, border 0.35s ease;
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.10);
+    text-decoration: none;
+    color: white;
+}
+
+/* Change navigation button styling when hovered */
+.login-page-action-btn:hover,
+.home-page-action-btn:hover,
+.about-page-action-btn:hover,
+.orders-page-action-btn:hover,
+.reviews-page-action-btn:hover {
+    background-color: rgba(238, 238, 238, 0.18);
+    border: 1px solid #ffffff;
+}
+
+/* Style the navigation icons */
+.ri-user-line,
+.ri-home-3-line,
+.ri-inbox-archive-line,
+.ri-info-i,
+.ri-question-answer-line {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* Style the navigation button text */
+.btn-content-text {
+    font-size: 1.05rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Style the circular shopping cart button */
+.cart-page-action-btn {
+    background-color: #f1f1f1;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(141, 141, 141, 0.15);
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.25);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.25s ease, border 0.35s ease;
+}
+
+/* Style the shopping cart icon */
+.ri-shopping-cart-line {
+    font-size: 1.15rem;
+    color: #2aaee2;
+}
+
+/* Change the cart button when hovered */
+.cart-page-action-btn:hover {
+    background-color: rgba(238, 238, 238, 0.18);
+    border: 1px solid #ffffff;
+}
+
+/* Change the cart icon colour when hovered */
+.cart-page-action-btn:hover .ri-shopping-cart-line {
+    color: #ffffff;
+}
+
+/* Centre and size the About page content */
+section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 110px 20px 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Style the About page text box */
+.aboutwriting {
+    width: 85%;
+    max-width: 1200px;
+    font-size: clamp(1rem, 1.25vw, 1.4rem);
+    background-color: white;
+    font-family: Garamond, serif;
+    padding: 70px 70px;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 1.45;
+    margin: 0 auto;
+    border-radius: 100px;
+}
+
+/* Hide the hamburger menu on larger screens */
+.toggle-menu {
+    display: none;
+}
+
+/* Apply responsive navigation styles on smaller screens */
+@media screen and (max-width: 1000px) {
+
+    /* Adjust the navigation bar for smaller screens */
+    .top-navigation-container-bar {
+        height: 80px;
+        padding: 10px 20px;
+        position: relative;
+    }
+
+    /* Display the hamburger menu */
+    .toggle-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: #2aaee2;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    /* Style the hamburger icon */
+    .toggle-menu i {
+        font-size: 2rem;
+        color: white;
+    }
+
+    /* Change the hamburger button when hovered */
+    .toggle-menu:hover {
+        background-color: rgba(238, 238, 238, 0.18);
+        border: 1px solid white;
+    }
+
+    /* Hide and position the navigation menu on smaller screens */
+    .right-side-nav-options {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 220px;
+        height: 390px;
+        max-height: calc(100vh - 100px);
+        background-color: #1daee7;
+        padding: 15px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 2001;
+        overflow-y: auto;
+        overflow-x: hidden;
+        justify-content: flex-start;
+    }
+
+    /* Show the navigation menu when the hamburger button is activated */
+    .right-side-nav-options.show {
+        display: flex;
+    }
+
+    /* Make navigation options fill the menu width */
+    .right-side-nav-options > div,
+    .right-side-nav-options > a {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    /* Adjust navigation buttons for smaller screens */
+    .login-page-action-btn,
+    .home-page-action-btn,
+    .about-page-action-btn,
+    .orders-page-action-btn,
+    .reviews-page-action-btn {
+        width: 100%;
+        min-height: 50px;
+        height: 50px;
+        justify-content: flex-start;
+        padding: 10px 15px;
+        flex: 0 0 auto;
+    }
+
+    /* Position the cart button within the mobile menu */
+    .right-side-nav-options > div:last-child {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    /* Set the size of the mobile cart button */
+    .cart-page-action-btn {
+        width: 50px;
+        height: 50px;
+
+        flex: 0 0 auto;
+    }
+
+    /* Style the navigation menu scrollbar */
+    .right-side-nav-options::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Style the scrollbar handle */
+    .right-side-nav-options::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+    }
+
+    /* Style the scrollbar track */
+    .right-side-nav-options::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+}

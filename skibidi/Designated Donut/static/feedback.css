@@ -1,0 +1,241 @@
+/* Import the Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Reset default spacing and use border-box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centre the feedback page and set the background */
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat, Arial, sans-serif;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(29, 174, 231, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(29, 174, 231, 0.08),
+            transparent 30%
+        ),
+        #f3f7f9;
+}
+
+/* Set the width and spacing of the main container */
+.total {
+    width: 100%;
+    max-width: 480px;
+    padding: 25px;
+}
+
+/* Style the feedback form */
+form {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 22px;
+    width: 100%;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.10),
+        0 3px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Centre and space the feedback header */
+.feedback-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Style the feedback icon */
+.feedback-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #1daee7;
+    color: white;
+    font-size: 1.6rem;
+    box-shadow:0 6px 15px rgba(29, 174, 231, 0.25);
+}
+
+/* Style the feedback heading */
+.feedback-header h1 {
+    font-size: 1.65rem;
+    color: #222;
+    margin-bottom: 7px;
+    font-weight: 700;
+}
+
+/* Style the feedback description */
+.feedback-header p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Add spacing between form fields */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Style the form labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Style text inputs and text areas */
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #dce2e6;
+    background: #fafcfd;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+/* Set the height of text inputs */
+input {
+    height: 45px;
+}
+
+/* Set the minimum height of the text area */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Highlight inputs when selected */
+input:focus,
+textarea:focus {
+    border-color: #1daee7;
+    background: #ffffff;
+    box-shadow:0 0 0 3px rgba(29, 174, 231, 0.12);
+}
+
+/* Style placeholder text */
+textarea::placeholder,
+input::placeholder {
+    color: #a5adb3;
+}
+
+/* Position the rating input and icon */
+.rating-wrapper {
+    position: relative;
+}
+
+/* Add space for the rating icon */
+.rating-wrapper input {
+    padding-right: 45px;
+}
+
+/* Position and style the rating icon */
+.rating-wrapper span {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffc928;
+    font-size: 1.2rem;
+}
+
+/* Style small supporting text */
+small {
+    display: block;
+    margin-top: 6px;
+    color: #8a9297;
+    font-size: 0.75rem;
+}
+
+/* Arrange the form buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 10px;
+}
+
+/* Set the shared button styling */
+#Submit,
+.leave {
+    width: 100%;
+    height: 46px;
+    border-radius: 11px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Style the submit button */
+#Submit {
+    color: white;
+    background: #1daee7;
+    border: 1px solid #1daee7;
+    box-shadow: 0 5px 12px rgba(29, 174, 231, 0.22);
+}
+
+/* Add a hover effect to the submit button */
+#Submit:hover {
+    background: #159bd0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(29, 174, 231, 0.28);
+}
+
+/* Style the leave button */
+.leave {
+    color: #555;
+    background: #f4f6f7;
+    border: 1px solid #e0e4e7;
+}
+
+/* Add a hover effect to the leave button */
+.leave:hover {
+    background: #e9edef;
+    transform: translateY(-2px);
+}
+
+/* Adjust the form layout for smaller screens */
+@media (max-width: 500px) {
+
+    /* Reduce container padding on mobile */
+    .total {
+        padding: 15px;
+    }
+
+    /* Reduce form padding on mobile */
+    form {
+        padding: 25px;
+    }
+
+    /* Reduce the heading size on mobile */
+    .feedback-header h1 {
+        font-size: 1.45rem;
+    }
+}

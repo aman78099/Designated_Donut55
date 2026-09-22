@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    overscroll-behavior-y: none;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    height: 100vh;
+    width: 100vw;
+}
+
+.top-navigation-container-bar {
+    background-color: #1daee7;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.10);
+    align-items: center;
+}
+
+.left-side-container-box-for-logo {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+.left-side-container-box-for-logo img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -moz-window-dragging: none;
+}
+
+.logo-title-text {
+    font-size: 1.45rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.25s ease;
+}
+
+.logo-title-text:hover {
+    color: rgb(61, 61, 61);
+}
+
+.right-side-nav-options {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.login-page-action-btn {
+    text-decoration: none;
+    padding: 15px 10px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2aaee2;
+    border-radius: 4px;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.25s ease, border 0.35s ease;
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.10);
+}
+
+.home-page-action-btn,
+.about-page-action-btn,
+.orders-page-action-btn,
+.reviews-page-action-btn {
+    width: fit-content;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2aaee2;
+    border-radius: 4px;
+    padding: 10px 15px;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.25s ease, border 0.35s ease;
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.10);
+
+    /* Important for <a> */
+    text-decoration: none;
+    color: white;
+}
+
+.login-page-action-btn:hover,
+.home-page-action-btn:hover,
+.about-page-action-btn:hover,
+.orders-page-action-btn:hover,
+.reviews-page-action-btn:hover {
+    background-color:     rgba(238, 238, 238, 0.18);
+    border: 1px solid #ffffff;
+}
+
+.ri-user-line,
+.ri-home-3-line,
+.ri-inbox-archive-line,
+.ri-info-i,
+.ri-question-answer-line {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.btn-content-text {
+    font-size: 1.05rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.cart-page-action-btn {
+    background-color: #f1f1f1;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(141, 141, 141, 0.15);
+    box-shadow: 0 4px 8px rgba(82, 82, 82, 0.25);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.25s ease, border 0.35s ease;
+}
+
+.ri-shopping-cart-line {
+    font-size: 1.15rem;
+    color: #2aaee2;
+}
+
+.cart-page-action-btn:hover {
+    background-color: rgba(238, 238, 238, 0.18);
+    border: 1px solid #ffffff;
+}
+
+.cart-page-action-btn:hover .ri-shopping-cart-line {
+    color: #ffffff;
+}
+  
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  
+.rev-section{
+    margin: auto;
+    padding: 0 1rem;
+    max-width: 1100px;
+    text-align: center;
+}
+  
+.title{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: rgb(50, 50, 50);
+    margin-bottom: .5rem;
+}
+  
+.note{
+    font-size: 1.1rem;
+    color: rgb(150, 150, 150);
+    font-style: italic;
+    color: red;
+}
+  
+.reviews{
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.review{
+    margin: 0 1rem;
+    min-width: 300px;
+    flex: 1;
+}
+  
+.head-review{
+    margin: 1.75rem auto;
+    width: 150px;
+    height: 150px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+  
+.body-review{
+    background-color: rgb(238, 238, 238);
+    padding: 2.5rem;
+    box-shadow: 2px 2px 10px 3px rgb(225, 225, 225);
+}
+
+.name-review{
+    font-size: 1.5rem;
+    color: rgb(50, 50, 50);
+    margin-bottom: .25rem;
+}
+
+.place-review{
+    color: red;
+    font-style: italic;
+}
+  
+.rating{
+    color: rgb(253, 180, 42);
+    margin: 1rem 0;
+}
+
+.desc-review{
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    color: rgb(150, 150, 150);
+}
+  
+@media (max-width: 678px){
+    .review{
+      margin-top: 1.5rem;
+    }
+}
+  
+.review-button {
+    background-color:#2aaee2; 
+    border: rgb(4, 64, 136); 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
+    font-size: 120%; 
+    cursor: pointer; 
+    border-radius: 12%;
+    transition: background-color 0.3s; 
+    margin-bottom: 20px;
+}
+  
+.review-button:hover {
+    background-color: #09a0dc; 
+}
+  
+.total {
+    text-align: center; 
+}
+  
+nav {
+    background: #0082e6;
+    height: 80px;
+    width: 100%;
+}
+  
+label.logo {
+    color: white;
+    font-size: 25px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+  
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+  
+  
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+  
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+  
+nav ul li a:hover {
+    background: #1b9bff;
+    transition: .5s;
+}
+  
+.checkbtn {
+    font-size: 22px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+  
+  
+@media (max-width: 1050px) {
+    label.logo {
+        padding-left: 30px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 890px) {
+    .checkbtn {
+        display: block;
+    }
+    label.logo {
+        font-size: 22px;
+    }
+  
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+  
+    nav ul li a {
+        font-size: 20px;
+    }
+  
+    #check:checked~ul {
+        left: 0;
+    }
+}
+
+
+
+
+
+/* ========================================
+   TOGGLE MENU
+   ======================================== */
+
+   .toggle-menu {
+    display: none;
+}
+
+
+/* ========================================
+   RESPONSIVE / SMALL SCREENS
+   ======================================== */
+
+@media screen and (max-width: 1000px) {
+
+    .top-navigation-container-bar {
+        height: 80px;
+        padding: 10px 20px;
+        position: relative;
+    }
+
+
+    /* ========================================
+       TOGGLE BUTTON
+       ======================================== */
+
+    .toggle-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 50px;
+        height: 50px;
+
+        background-color: #2aaee2;
+        border: 1px solid transparent;
+        border-radius: 4px;
+
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+
+    .toggle-menu i {
+        font-size: 2rem;
+        color: white;
+    }
+
+
+    .toggle-menu:hover {
+        background-color: rgba(238, 238, 238, 0.18);
+        border: 1px solid white;
+    }
+
+
+    /* ========================================
+       MOBILE NAVIGATION
+       ======================================== */
+
+       .right-side-nav-options {
+        display: none;
+    
+        position: absolute;
+    
+        top: 80px;
+        right: 0;
+    
+        width: 220px;
+        height: 390px;
+        max-height: calc(100vh - 100px);
+    
+        background-color: #1daee7;
+    
+        padding: 15px;
+    
+        flex-direction: column;
+        align-items: stretch;
+    
+        gap: 10px;
+    
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+        z-index: 2001;
+    
+        overflow-y: auto;
+        overflow-x: hidden;
+    
+        justify-content: flex-start;
+    }
+
+
+    /* Show menu */
+
+    .right-side-nav-options.show {
+        display: flex;
+    }
+
+
+    /* ========================================
+       NAVIGATION ITEMS
+       ======================================== */
+
+    .right-side-nav-options > div,
+    .right-side-nav-options > a {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+
+    /* ========================================
+       NAVIGATION BUTTONS
+       ======================================== */
+
+    .login-page-action-btn,
+    .home-page-action-btn,
+    .about-page-action-btn,
+    .orders-page-action-btn,
+    .reviews-page-action-btn {
+        width: 100%;
+        min-height: 50px;
+        height: 50px;
+
+        justify-content: flex-start;
+
+        padding: 10px 15px;
+
+        flex: 0 0 auto;
+    }
+
+
+    /* ========================================
+       CART
+       ======================================== */
+
+    .right-side-nav-options > div:last-child {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+
+    .cart-page-action-btn {
+        width: 50px;
+        height: 50px;
+
+        flex: 0 0 auto;
+    }
+
+
+    /* ========================================
+       SCROLLBAR
+       ======================================== */
+
+    .right-side-nav-options::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .right-side-nav-options::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+    }
+
+    .right-side-nav-options::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+}
+
+
+/* ========================================
+   SHORT SCREEN FIX
+   ======================================== */
+
+   @media screen and (max-height: 750px) {
+
+    .reviews {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .head-review {
+        margin: 1rem auto;
+    }
+
+    .review-button {
+        position: relative;
+        top: 0;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designated Donuts</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="/static/login.css">
+    <script src="/static/javascript/login.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT SIDE - FORMS -->
+        <div class="form-section">
+
+            <!-- ========================= -->
+            <!-- LOGIN FORM -->
+            <!-- ========================= -->
+
+            <div class="form-container active" id="loginForm">
+
+                <h1 class="form-title">Welcome Back</h1>
+
+                <p class="form-subtitle">
+                    Sign in to your account to continue your journey
+                </p>
+
+                {% if error %}
+                    <p style="color: red; text-align: center;">
+                        {{ error }}
+                    </p>
+                {% endif %}
+
+                <form id="loginFormSubmit"
+                      action="{{ url_for('login_page') }}"
+                      method="POST">
+
+                    <div class="form-group">
+
+                        <input type="email"
+                               name="email"
+                               class="form-control"
+                               placeholder="Email Address"
+                               required>
+
+                        <i class="fas fa-envelope"></i>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <input type="password"
+                               name="password"
+                               class="form-control"
+                               placeholder="Password"
+                               required>
+
+                        <i class="fas fa-lock"></i>
+
+                    </div>
+
+
+                    <button type="submit" class="btn-primary">
+
+                        <span class="btn-text">
+                            Sign In
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- BACK TO HOME BUTTON -->
+
+                <div class="home-button-container">
+                    <a href="{{ url_for('home_page') }}" class="home-button">
+                        Back to Home
+                    </a>
+                </div>
+
+
+                <!-- SWITCH TO SIGN UP -->
+
+                <div class="form-switch">
+
+                    Don't have an account?
+
+                    <a href="#" onclick="showSignup()">
+                        Create one
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================= -->
+            <!-- SIGN UP FORM -->
+            <!-- ========================= -->
+
+            <div class="form-container" id="signupForm">
+
+                <h1 class="form-title">
+                    Create Account
+                </h1>
+
+                <p class="form-subtitle">
+                    Join thousands of users and start your journey today
+                </p>
+
+
+                {% if error %}
+                    <p style="color: red; text-align: center;">
+                        {{ error }}
+                    </p>
+                {% endif %}
+
+
+                <form id="signupFormSubmit"
+                      action="{{ url_for('signup') }}"
+                      method="POST">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+                        <input type="text"
+                               name="name"
+                               class="form-control"
+                               placeholder="Full Name"
+                               required>
+
+                        <i class="fas fa-user"></i>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <input type="email"
+                               name="email"
+                               class="form-control"
+                               placeholder="Email Address"
+                               required>
+
+                        <i class="fas fa-envelope"></i>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <input type="password"
+                               name="password"
+                               class="form-control"
+                               placeholder="Password"
+                               required>
+
+                        <i class="fas fa-lock"></i>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="form-group">
+
+                        <input type="password"
+                               name="confirm_password"
+                               class="form-control"
+                               placeholder="Confirm Password"
+                               required>
+
+                        <i class="fas fa-lock"></i>
+
+                    </div>
+
+
+                    <!-- TERMS -->
+
+                    <div class="checkbox-group">
+
+                        <input type="checkbox"
+                               id="terms"
+                               required>
+
+                        <label for="terms">
+                            I agree to the Terms of Service and Privacy Policy
+                        </label>
+
+                    </div>
+
+
+                    <!-- CREATE ACCOUNT -->
+
+                    <button type="submit" class="btn-primary">
+
+                        <span class="btn-text">
+                            Create Account
+                        </span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- BACK TO HOME BUTTON -->
+
+                <div class="home-button-container">
+
+                    <a href="{{ url_for('home_page') }}"
+                       class="home-button">
+
+                        Back to Home
+
+                    </a>
+
+                </div>
+
+
+                <!-- SWITCH TO LOGIN -->
+
+                <div class="form-switch">
+
+                    Already have an account?
+
+                    <a href="#" onclick="showLogin()">
+                        Sign in
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ========================= -->
+        <!-- RIGHT SIDE -->
+        <!-- ========================= -->
+
+        <div class="image-section">
+
+            <div class="floating-shapes"></div>
+
+            <div class="image-content">
+
+                <h2>Hello Donut Lovers!</h2>
+
+                <p>
+                    Enter your login details, I donut think you'll regret it!
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

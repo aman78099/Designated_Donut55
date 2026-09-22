@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Set the character encoding and make the page responsive -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Set the webpage title -->
+    <title>Designated Donuts</title>
+
+        <!-- Link the page to its CSS stylesheet -->
+    <link rel="stylesheet" href="/static/thankyou.css">
+
+        <!-- Import Remix Icon library for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="top-navigation-container-bar">
+
+        <!-- Display the website logo and name -->
+        <div class="left-side-container-box-for-logo">
+            <img
+                src="/static/images/Donut_Icon_Logo.png"
+                alt="Donut Destination Icon">
+
+            <span class="logo-title-text">
+                Donut Destination
+            </span>
+        </div>
+
+        <!-- Display the navigation options -->
+        <div class="right-side-nav-options">
+            <div>
+                <!-- Link back to the home page -->
+                <a class="home-page-action-btn" href="{{ url_for('home_page') }}">
+                    <i class="ri-home-3-line"></i>
+                    <span class="btn-content-text">Home</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Thank You Content -->
+    <main class="thank-you-page">
+        <!-- Display the order confirmation message -->
+        <div class="thank-you-box">
+
+            <div class="success-icon">
+                <i class="ri-check-line"></i>
+            </div>
+
+            <h1>Thank You for Your Order!</h1>
+
+            <p>Your order has been placed successfully.</p>
+        </div>
+
+
+        <!-- Orders -->
+        <section class="orders-section">
+            <!-- Display the customer's previous orders -->
+            <h2>Your Orders</h2>
+
+            <!-- Check whether the customer has any orders -->
+            {% if orders %}
+
+                <div class="orders-container">
+
+                    <!-- Loop through each order and display its details -->
+                    {% for order in orders %}
+
+                    <!-- Start a new order box when the order ID changes -->
+                    {% if loop.first or order[0] != orders[loop.index0 - 1][0] %}
+                
+                        <div class="order-box">
+                
+                            <h2>Order #{{ order[0] }}</h2>
+                
+                            <p>Date: {{ order[1] }}</p>
+                
+                            <h3>Items:</h3>
+                
+                    {% endif %}
+
+                            <!-- Display the product name, quantity, and calculated price -->
+                            <p>
+                                {{ order[2] }}
+                                × {{ order[4] }}
+                                - ${{ order[3] * order[4] }}
+                            </p>
+
+                    <!-- Close the order box when the current order ends -->
+                    {% if loop.last or order[0] != orders[loop.index0 + 1][0] %}
+                
+                        </div>
+                
+                    {% endif %}
+                
+                {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <!-- Display a message when the customer has no orders -->
+                <div class="no-orders">
+
+                    <i class="ri-emotion-sad-line"></i>
+
+                    <h3>No orders yet</h3>
+
+                    <p>You have not made any orders yet.</p>
+
+                </div>
+
+            {% endif %}
+
+            <!-- Provide a link back to the home page -->
+            <a href="{{ url_for('home_page') }}" class="back-home">
+                <i class="ri-home-3-line"></i>
+                Back to Home
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Donut Destination</p>
+    </footer>
+
+</body>
+</html>

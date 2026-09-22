@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Designated Donuts</title>
+    <link rel="stylesheet" href="/static/feedback.css" id="feedbackForm">
+</head>
+<body>
+<div class="total">
+
+    <form action="{{ url_for('add_review') }}" method="POST">
+        
+        <div>
+            <label for="review_date">Date:</label>
+            <input type="date" id="review_date" name="review_date">
+        </div>
+    
+        <br>
+    
+        <div>
+            <label for="review">Review:</label>
+            <textarea name="review_text" rows="5" cols="43" required></textarea>
+        </div>
+    
+        <br>
+    
+        <div>
+            <label for="rating">Rating:</label>
+            <input type="number" name="rating" min="1" max="5" required>
+        </div>
+    
+        <br>
+    
+        <div class="buttons">
+    
+            <div>
+                <button type="submit" id="Submit">Submit</button>
+            </div>
+            
+            <br>
+    
+            <div>
+                <button
+                    type="button"
+                    class="leave"onclick="window.location.href='{{ url_for('review_page') }}'">Leave</button>
+                </button>
+            </div>
+    
+        </div>
+    
+    </form>
+
+
+<script src="/static/javascript/feedback.js"></script>
+</body>
+</html>
